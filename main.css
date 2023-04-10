@@ -1,0 +1,69 @@
+:root {
+    --white: #f9f9f9;
+	--greyish: #aaaaaa;
+	--warm-gray: #6f6f6f;
+	--greyish-brown: #484848;
+    --blue: #0288d1;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--warm-grey);
+    letter-spacing: normal;
+    line-height: 1.5;
+}
+
+h4 {
+	margin: 0px;
+    color: var(--greyish-brown);
+    font-weight: 500;
+}
+
+.test{
+    border: 1px solid red;
+}
+
+.card{
+	border: 1px solid var(--greyish);
+}
+
+.card, img{
+    width: 300px;
+	border-radius: 3px;
+}
+
+.card-content  {
+	background-color: #f9f9f9;
+	padding: 10px;
+    color: var(--warm-grey);
+}
+
+.card-content  > :not(img) {
+    margin-top: 10px;
+}
+
+.card-content  > img {
+	width: 300px;
+}
+
+.card-content span {
+    color: var(--greyish);
+}
+
+/* selects the author e.g Prateek Kunder */
+.about > span:nth-child(2){
+    color: var(--warm-grey);
+}
+
+/* selects the date since its last span */
+.about > span:last-child{
+    margin-left: 20px;
+}
+
+
+.readmore{
+    display: flex;
+    justify-content: right;
+    color: var(--blue);
+    font-weight: bold;
+}
