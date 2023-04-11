@@ -1,69 +1,144 @@
 :root {
-    --white: #f9f9f9;
+	--white: #f9f9f9;
 	--greyish: #aaaaaa;
-	--warm-gray: #6f6f6f;
+	--warm-grey: #6f6f6f;
 	--greyish-brown: #484848;
-    --blue: #0288d1;
+	--blue: #0288d1;
+}
+
+.test {
+	border: 1px solid red;
 }
 
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--warm-grey);
-    letter-spacing: normal;
-    line-height: 1.5;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		sans-serif;
+	color: var(--warm-grey);
+	letter-spacing: normal;
+	line-height: 1.5;
+	margin: 0;
 }
 
 h4 {
 	margin: 0px;
-    color: var(--greyish-brown);
-    font-weight: 500;
+	color: var(--greyish-brown);
+	font-weight: 500;
 }
 
-.test{
-    border: 1px solid red;
+img {
+	width: 100%;
 }
 
-.card{
+.container {
+	display: flex;
+	position: relative;
+	height: inherit;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 900px;
+}
+
+.card {
+	background-color: snow;
 	border: 1px solid var(--greyish);
+	border-radius: 5px;
+	min-width: 300px;
+	scroll-snap-align: start;
+	margin: 5px;
+	overflow: hidden;
 }
 
-.card, img{
-    width: 300px;
-	border-radius: 3px;
-}
-
-.card-content  {
-	background-color: #f9f9f9;
+.card__content {
+	background-color: var(--white);
 	padding: 10px;
-    color: var(--warm-grey);
+	color: var(--warm-grey);
 }
 
-.card-content  > :not(img) {
-    margin-top: 10px;
+.card__content > h4,
+.card__content > p {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
-.card-content  > img {
+.card__content > a {
+	display: flex;
+	justify-content: right;
+	color: var(--blue);
+	font-weight: bold;
+}
+
+.card__about {
+	color: var(--greyish);
+}
+
+.card__info {
+	color: var(--warm-grey);
+}
+
+.card__about__author {
+	color: var(--greyish-brown);
+}
+
+.card__about__timeline {
+	margin-left: 2em;
+}
+
+.card__container {
+	width: 930px;
+	height: auto;
+
+    position: relative;
+
+	overflow-y: hidden;
+	overflow-x: hidden;
+	display: flex;
+
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+.card__container .item {
+	justify-content: center;
+	align-items: center;
+
+	flex: 0 0 300px;
 	width: 300px;
+	display: inline-flex;
+
+	font-weight: 700;
+	color: white;
 }
 
-.card-content span {
-    color: var(--greyish);
+.carousel{
+    position: relative;
 }
 
-/* selects the author e.g Prateek Kunder */
-.about > span:nth-child(2){
-    color: var(--warm-grey);
+.prev,
+.next {
+	background-color: var(--white);
+	padding: 10px;
+	border-radius: 30px;
 }
 
-/* selects the date since its last span */
-.about > span:last-child{
-    margin-left: 20px;
+.prev {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: rotate(-90deg);
 }
 
-
-.readmore{
-    display: flex;
-    justify-content: right;
-    color: var(--blue);
-    font-weight: bold;
+.next {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(90deg);
 }
